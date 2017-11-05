@@ -26,3 +26,7 @@ Run:
 ```sh
 ./_build/default/maco.exe
 ```
+
+## Project structure:
+* maco.ml: Simple imperative virtual machine
+* macofp.ml: Simple functional virtual machine
