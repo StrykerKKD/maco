@@ -2,4 +2,4 @@
 
 ;; This declare the hello_world executable implemented by hello_world.ml
 (executables
- ((names (maco macofp))))
+ ((names (maco macofp imaco))))
