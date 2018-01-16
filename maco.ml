@@ -25,7 +25,7 @@ let get_number = function
   | Num n -> n
   | _ -> failwith "You can only push numbers onto the stack!"
 
-let rec eval = function
+let eval = function
   | HLT -> 
     running := false;
     Printf.printf "done\n"
