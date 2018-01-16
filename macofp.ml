@@ -30,13 +30,4 @@ let eval stack = function
     let result = a + b in
     stack |> List.tl |> List.tl |> List.cons result
 
-let rec fold_until_HLT eval stack = function
-  | x :: xs when x = HLT -> 
-    Printf.printf "done\n";
-    stack
-  | x :: xs -> 
-    fold_until_HLT eval (eval stack x) xs
-  | [] -> 
-    stack
-
-let result_stack = fold_until_HLT eval stack program
+let result = List.fold_left eval stack program
