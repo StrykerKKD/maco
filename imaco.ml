@@ -153,7 +153,7 @@ let eval = function
       let _ = set_ip instructions.(next_next_instruction) in
       is_jmp := true
     else
-      next_next_instruction |> set_ip
+      get_ip () + 3 |> set_ip
   | IFN -> 
     let next_next_instruction = instructions.(get_ip () + 3) in
     let next_instruction = instructions.(get_ip () + 2) in
@@ -162,7 +162,7 @@ let eval = function
       let _ = set_ip instructions.(next_next_instruction) in
       is_jmp := true
     else
-      next_next_instruction |> set_ip
+      get_ip () + 3 |> set_ip
   | GLD -> 
     get_sp () + 1 |> set_sp;
     get_ip () + 1 |> set_ip;
